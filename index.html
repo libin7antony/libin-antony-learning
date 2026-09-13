@@ -5,49 +5,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Libin Antony | Learning Portal</title>
 <style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033}
-header{background:linear-gradient(135deg,#183b7a,#3566c2);color:#fff;padding:46px 20px 38px;text-align:center}
-header .badge{display:inline-block;background:rgba(255,255,255,.16);padding:7px 13px;border-radius:30px;font-size:13px;margin-bottom:12px}
-header h1{margin:0;font-size:34px}header p{margin:10px 0 0;font-size:16px;opacity:.92}
-main{max-width:1000px;margin:auto;padding:28px 18px 50px}
-.welcome{text-align:center;margin-bottom:28px}.welcome h2{margin:0 0 8px;font-size:25px}.welcome p{margin:0;color:#657086}
-.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
-.class-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(24,59,122,.09);border:1px solid #e7ecf5}
-.class-card h3{margin:0 0 18px;font-size:24px}
-.subject{display:flex;align-items:center;gap:12px;text-decoration:none;color:#172033;background:#f4f7ff;border:1px solid #e1e8f7;padding:16px;border-radius:14px;margin-top:12px;font-weight:700}
-.subject:hover{background:#e8efff}.icon{font-size:24px}
-.section{margin-top:28px;background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(24,59,122,.07)}
-.section h2{margin:0 0 8px}.section p{color:#657086}
-.chapter{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f5}
-.chapter:last-child{border-bottom:0}.coming{font-size:13px;color:#7a8496;background:#f1f3f7;padding:6px 10px;border-radius:20px}
-.top{position:fixed;right:16px;bottom:16px;background:#183b7a;color:#fff;text-decoration:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:0 5px 16px rgba(0,0,0,.18)}
-footer{text-align:center;padding:25px 15px;color:#748096;font-size:14px}
-@media(max-width:500px){header h1{font-size:29px}.class-card,.section{padding:20px}main{padding-left:14px;padding-right:14px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f8ff;color:#14213d}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid #e5ebf5;padding:12px 18px}
+.nav{max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-weight:800;color:#17366f}.brand small{display:block;font-weight:500;color:#71809b}
+nav a{margin-left:15px;text-decoration:none;color:#31476c;font-weight:600;font-size:14px}
+.hero{max-width:1050px;margin:25px auto 0;padding:30px 20px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:25px}
+.hero-text{animation:rise .7s ease both}.eyebrow{letter-spacing:4px;font-weight:700;font-size:13px;color:#2d73d5}
+h1{font-size:clamp(38px,7vw,64px);line-height:.98;margin:12px 0;color:#132b55}
+h1 span{color:#2878d7}.hero p{font-size:18px;line-height:1.6;color:#62718a}
+.tagline{font-weight:700;color:#294a79}
+.photo-wrap{position:relative;animation:floatIn .8s ease both}
+.photo{width:100%;max-width:440px;display:block;margin:auto;border-radius:28px;box-shadow:0 18px 45px rgba(26,64,120,.22);aspect-ratio:4/5;object-fit:cover;object-position:center top}
+.photo-wrap:after{content:"";position:absolute;inset:12px -8px -10px 12px;border:2px solid #78b8ff;border-radius:30px;z-index:-1}
+.section{max-width:1050px;margin:15px auto;padding:30px 20px}
+.title{text-align:center;margin-bottom:25px}.title h2{font-size:32px;margin:0 0 8px}.title p{color:#6b7890;margin:0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.class-card{background:#fff;border-radius:24px;padding:25px;border:1px solid #e5ebf5;box-shadow:0 10px 30px rgba(26,64,120,.08);transition:.25s}
+.class-card:hover{transform:translateY(-5px)}
+.class-card h3{font-size:29px;margin:0 0 17px}
+.subjects{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.subject{padding:18px;border-radius:17px;text-decoration:none;color:#17315d;background:#eef5ff;border:1px solid #dce9fb;transition:.25s}
+.subject:hover{transform:scale(1.03);box-shadow:0 8px 20px rgba(40,120,215,.13)}
+.subject b{display:block;font-size:17px;margin-top:8px}.subject small{color:#6a7890;line-height:1.5}
+.icon{font-size:28px}
+.quote{background:linear-gradient(135deg,#e7f4ff,#f5f0ff);border-radius:24px;padding:28px;text-align:center;margin-top:8px}
+.quote p{font-size:21px;font-style:italic;margin:0;color:#294a79}
+.quote small{display:block;margin-top:10px;font-weight:700;letter-spacing:2px;color:#5c7190}
+footer{text-align:center;padding:35px 15px;background:#17366f;color:#dce9ff;font-size:14px}
+.top{position:fixed;right:16px;bottom:16px;background:#2878d7;color:white;text-decoration:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:0 7px 20px rgba(0,0,0,.2)}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes floatIn{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:700px){.nav nav{display:none}.hero{grid-template-columns:1fr;text-align:center;padding-top:20px}.photo{max-width:330px}.cards{grid-template-columns:1fr}.subjects{grid-template-columns:1fr 1fr}.hero p{font-size:16px}}
 </style>
 </head>
 <body id="top">
 <header>
-<div class="badge">📚 Learning Portal</div>
-<h1>Libin Antony</h1>
-<p>English &amp; Social Science · Classes 8 &amp; 9</p>
+<div class="nav">
+<div class="brand">📖 Libin Antony <small>Learning Portal</small></div>
+<nav><a href="#top">Home</a><a href="#classes">Classes</a></nav>
+</div>
 </header>
-<main>
-<section class="welcome"><h2>Welcome, Students!</h2><p>Select your class and subject to access your learning notes.</p></section>
-<section class="class-grid">
-<div class="class-card"><h3>Class 8</h3>
-<a class="subject" href="#class8-english"><span class="icon">📘</span>English</a>
-<a class="subject" href="#class8-social"><span class="icon">🌍</span>Social Science</a></div>
-<div class="class-card"><h3>Class 9</h3>
-<a class="subject" href="#class9-english"><span class="icon">📘</span>English</a>
-<a class="subject" href="#class9-social"><span class="icon">🌍</span>Social Science</a></div>
+
+<section class="hero">
+<div class="hero-text">
+<div class="eyebrow">WELCOME TO</div>
+<h1>Libin <span>Antony</span><br>Learning Portal</h1>
+<p class="tagline">English &amp; Social Science · Classes 8 &amp; 9</p>
+<p>Clear notes. Simple explanations. Better learning. Brighter futures.</p>
+</div>
+<div class="photo-wrap">
+<img class="photo" src="teacher-photo.png" alt="Libin Antony">
+</div>
 </section>
-<section class="section" id="class8-english"><h2>📘 Class 8 — English</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
-<section class="section" id="class8-social"><h2>🌍 Class 8 — Social Science</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
-<section class="section" id="class9-english"><h2>📘 Class 9 — English</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
-<section class="section" id="class9-social"><h2>🌍 Class 9 — Social Science</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
-</main>
+
+<section class="section" id="classes">
+<div class="title"><h2>Choose Your Class</h2><p>Find your subject and start learning.</p></div>
+<div class="cards">
+<div class="class-card"><h3>Class 8</h3><div class="subjects">
+<a class="subject" href="#class8-english"><span class="icon">📘</span><b>English</b><small>Notes · Summaries · Questions</small></a>
+<a class="subject" href="#class8-social"><span class="icon">🌍</span><b>Social Science</b><small>History · Geography · Civics</small></a>
+</div></div>
+<div class="class-card"><h3>Class 9</h3><div class="subjects">
+<a class="subject" href="#class9-english"><span class="icon">📘</span><b>English</b><small>Notes · Summaries · Questions</small></a>
+<a class="subject" href="#class9-social"><span class="icon">🌍</span><b>Social Science</b><small>History · Geography · Civics</small></a>
+</div></div>
+</div>
+</section>
+
+<section class="section" id="class8-english"><div class="quote"><p>“Your learning journey starts here.”</p><small>CLASS 8 · ENGLISH</small></div></section>
+<section class="section" id="class8-social"><div class="quote"><p>“Explore the world, understand the world.”</p><small>CLASS 8 · SOCIAL SCIENCE</small></div></section>
+<section class="section" id="class9-english"><div class="quote"><p>“Learn deeper. Aim higher.”</p><small>CLASS 9 · ENGLISH</small></div></section>
+<section class="section" id="class9-social"><div class="quote"><p>“Knowledge opens new perspectives.”</p><small>CLASS 9 · SOCIAL SCIENCE</small></div></section>
+
 <a class="top" href="#top" aria-label="Back to top">↑</a>
-<footer>© Libin Antony · Learning Portal</footer>
+<footer>© Libin Antony · Learning Portal · English &amp; Social Science · Classes 8 &amp; 9</footer>
 </body>
 </html>
