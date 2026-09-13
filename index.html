@@ -5,73 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Libin Antony | Learning Portal</title>
 <style>
-  *{box-sizing:border-box}
-  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
-  header{background:linear-gradient(135deg,#1f3c88,#315bb5);color:white;padding:42px 20px;text-align:center}
-  header h1{margin:0;font-size:32px}
-  header p{margin:10px 0 0;font-size:16px;opacity:.9}
-  main{max-width:950px;margin:30px auto;padding:0 18px}
-  .intro{text-align:center;margin-bottom:25px}
-  .intro h2{margin-bottom:8px}
-  .classes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-  .card{background:white;border-radius:18px;padding:25px;box-shadow:0 5px 20px rgba(0,0,0,.07)}
-  .card h3{margin-top:0;font-size:24px}
-  .subject{display:block;text-decoration:none;background:#eef3ff;color:#1f3c88;padding:15px;border-radius:12px;margin:12px 0;font-weight:bold}
-  .subject:hover{background:#dfe8ff}
-  footer{text-align:center;padding:30px 15px;color:#697386;font-size:14px}
-  .note{background:white;border-radius:16px;padding:22px;margin-top:25px;box-shadow:0 5px 20px rgba(0,0,0,.06)}
-  .note h2{margin-top:0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033}
+header{background:linear-gradient(135deg,#183b7a,#3566c2);color:#fff;padding:46px 20px 38px;text-align:center}
+header .badge{display:inline-block;background:rgba(255,255,255,.16);padding:7px 13px;border-radius:30px;font-size:13px;margin-bottom:12px}
+header h1{margin:0;font-size:34px}header p{margin:10px 0 0;font-size:16px;opacity:.92}
+main{max-width:1000px;margin:auto;padding:28px 18px 50px}
+.welcome{text-align:center;margin-bottom:28px}.welcome h2{margin:0 0 8px;font-size:25px}.welcome p{margin:0;color:#657086}
+.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.class-card{background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(24,59,122,.09);border:1px solid #e7ecf5}
+.class-card h3{margin:0 0 18px;font-size:24px}
+.subject{display:flex;align-items:center;gap:12px;text-decoration:none;color:#172033;background:#f4f7ff;border:1px solid #e1e8f7;padding:16px;border-radius:14px;margin-top:12px;font-weight:700}
+.subject:hover{background:#e8efff}.icon{font-size:24px}
+.section{margin-top:28px;background:#fff;border-radius:20px;padding:25px;box-shadow:0 8px 25px rgba(24,59,122,.07)}
+.section h2{margin:0 0 8px}.section p{color:#657086}
+.chapter{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #edf0f5}
+.chapter:last-child{border-bottom:0}.coming{font-size:13px;color:#7a8496;background:#f1f3f7;padding:6px 10px;border-radius:20px}
+.top{position:fixed;right:16px;bottom:16px;background:#183b7a;color:#fff;text-decoration:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;box-shadow:0 5px 16px rgba(0,0,0,.18)}
+footer{text-align:center;padding:25px 15px;color:#748096;font-size:14px}
+@media(max-width:500px){header h1{font-size:29px}.class-card,.section{padding:20px}main{padding-left:14px;padding-right:14px}}
 </style>
 </head>
-<body>
+<body id="top">
 <header>
-  <h1>Libin Antony</h1>
-  <p>Learning Portal · English &amp; Social Science</p>
+<div class="badge">📚 Learning Portal</div>
+<h1>Libin Antony</h1>
+<p>English &amp; Social Science · Classes 8 &amp; 9</p>
 </header>
-
 <main>
-  <section class="intro">
-    <h2>Welcome</h2>
-    <p>Select your class and subject to access the teaching notes.</p>
-  </section>
-
-  <section class="classes">
-    <div class="card">
-      <h3>Class 8</h3>
-      <a class="subject" href="#class8-english">📘 English</a>
-      <a class="subject" href="#class8-social">🌍 Social Science</a>
-    </div>
-
-    <div class="card">
-      <h3>Class 9</h3>
-      <a class="subject" href="#class9-english">📘 English</a>
-      <a class="subject" href="#class9-social">🌍 Social Science</a>
-    </div>
-  </section>
-
-  <section class="note" id="class8-english">
-    <h2>Class 8 · English</h2>
-    <p>Your English teaching notes will appear here. Chapters can be added and edited later.</p>
-  </section>
-
-  <section class="note" id="class8-social">
-    <h2>Class 8 · Social Science</h2>
-    <p>Your Social Science teaching notes will appear here. Chapters can be added and edited later.</p>
-  </section>
-
-  <section class="note" id="class9-english">
-    <h2>Class 9 · English</h2>
-    <p>Your English teaching notes will appear here. Chapters can be added and edited later.</p>
-  </section>
-
-  <section class="note" id="class9-social">
-    <h2>Class 9 · Social Science</h2>
-    <p>Your Social Science teaching notes will appear here. Chapters can be added and edited later.</p>
-  </section>
+<section class="welcome"><h2>Welcome, Students!</h2><p>Select your class and subject to access your learning notes.</p></section>
+<section class="class-grid">
+<div class="class-card"><h3>Class 8</h3>
+<a class="subject" href="#class8-english"><span class="icon">📘</span>English</a>
+<a class="subject" href="#class8-social"><span class="icon">🌍</span>Social Science</a></div>
+<div class="class-card"><h3>Class 9</h3>
+<a class="subject" href="#class9-english"><span class="icon">📘</span>English</a>
+<a class="subject" href="#class9-social"><span class="icon">🌍</span>Social Science</a></div>
+</section>
+<section class="section" id="class8-english"><h2>📘 Class 8 — English</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
+<section class="section" id="class8-social"><h2>🌍 Class 8 — Social Science</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
+<section class="section" id="class9-english"><h2>📘 Class 9 — English</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
+<section class="section" id="class9-social"><h2>🌍 Class 9 — Social Science</h2><p>Teaching notes and study materials will be added here.</p><div class="chapter"><span>Chapters</span><span class="coming">Coming soon</span></div></section>
 </main>
-
-<footer>
-  © Libin Antony · Learning Portal
-</footer>
+<a class="top" href="#top" aria-label="Back to top">↑</a>
+<footer>© Libin Antony · Learning Portal</footer>
 </body>
 </html>
